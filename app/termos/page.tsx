@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { NavBar } from "@/components/nav-bar"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { Button } from "@/components/ui/button"
-import { ChevronUp, Menu } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
-import Link from "next/link"
+import { useState, useEffect } from "react";
+import { NavBar } from "@/components/nav-bar";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Button } from "@/components/ui/button";
+import { ChevronUp, Menu } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const sections = [
   { id: "aceitacao", title: "1. Aceitação dos Termos" },
@@ -22,9 +22,9 @@ const sections = [
   { id: "alteracoes", title: "10. Alterações nos Termos" },
   { id: "legislacao", title: "11. Legislação Aplicável" },
   { id: "contato", title: "12. Contato" },
-]
+];
 
-const isBrowser = typeof window !== "undefined"; // Definição global de isBrowser
+const isBrowser = typeof window !== "undefined"; // Verificação de execução no cliente
 
 export default function TermsPage() {
   const [activeSection, setActiveSection] = useState("");
@@ -32,7 +32,7 @@ export default function TermsPage() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    if (typeof window === "undefined") return; // Garante que não roda no servidor
+    if (!isBrowser) return; // Garantir que não executa no servidor
 
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 300);
@@ -55,7 +55,7 @@ export default function TermsPage() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isBrowser]);
+  }, []); // Não é necessário incluir `isBrowser` no array de dependências, pois ele já foi definido
 
   const scrollToTop = () => {
     if (isBrowser) {
@@ -72,6 +72,7 @@ export default function TermsPage() {
       setMenuOpen(false);
     }
   };
+
 
   return (
     <div className="min-h-screen bg-[#0F172A] flex flex-col">
