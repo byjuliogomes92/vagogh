@@ -63,15 +63,14 @@ export default function TermsPage() {
     }
   };
 
-  const scrollToSection = (sectionId: string) => {
-    if (isBrowser) {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-      setMenuOpen(false);
+  const scrollToSection = (id: string) => {
+    if (typeof window === "undefined") return; // Evita erro no servidor
+    const element = document.getElementById(id);
+    if (element) {
+      window.scrollTo({ top: element.offsetTop, behavior: "smooth" });
     }
   };
+  
 
 
   return (
@@ -99,15 +98,15 @@ export default function TermsPage() {
                       >
                         {sections.map((section) => (
                           <Button
-                            key={section.id}
-                            variant="ghost"
-                            className={`w-full justify-start ${
-                              activeSection === section.id ? "bg-[#3E5166] text-white" : "text-gray-300"
-                            }`}
-                            onClick={() => scrollToSection(section.id)}
-                          >
-                            {section.title}
-                          </Button>
+                          key={section.id}
+                          variant="ghost"
+                          className={`w-full justify-start ${
+                            typeof window !== "undefined" && activeSection === section.id ? "bg-[#3E5166] text-white" : "text-gray-300"
+                          }`}
+                          onClick={() => scrollToSection(section.id)}
+                        >
+                          {section.title}
+                        </Button>
                         ))}
                       </motion.nav>
                     )}
