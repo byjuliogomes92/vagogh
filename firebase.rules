@@ -1,0 +1,96 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Function to check if the user is an admin
+    function isAdmin() {
+      return request.auth != null && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    // Rules for the jobs collection
+    match /jobs/{jobId} {
+      allow read: if true; // Allow all users to read jobs
+      allow create, update: if isAdmin() && validateJobFields(request.resource.data);
+      allow delete: if isAdmin();
+    }
+
+    // Rules for users
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Rules for saved filters of a user
+    match /users/{userId}/savedFilters/{filterId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+      
+    // Rules for saved jobs of a user
+    match /users/{userId}/savedJobs/{jobId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Rules for job folders of a user
+    match /users/{userId}/jobFolders/{folderId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Rules for the news collection
+    match /news/{newsId} {
+      allow read: if true; // Allow public reading
+      allow create, update, delete: if isAdmin(); // Only admins can create, update and delete
+    }
+
+    // Rules for the settings collection
+    match /settings/{document} {
+      allow read: if true; // Anyone can read settings
+      allow write: if isAdmin(); // Only admins can modify settings
+    }
+
+    // Function to validate job fields
+    function validateJobFields(job) {
+      return job.size() >= 13
+             && 'company' in job && job.company is string
+             && 'logo' in job && job.logo is string
+             && 'title' in job && job.title is string
+             && 'location' in job && job.location is string
+             && 'salary' in job && (job.salary is number || job.salary == null)
+             && 'type' in job && job.type is string
+             && 'level' in job && job.level is string
+             && 'posted' in job && job.posted is timestamp
+             && 'description' in job && job.description is string
+             && 'requirements' in job && job.requirements is list
+             && 'benefits' in job && job.benefits is list
+             && 'tags' in job && job.tags is list
+             && ('applicationUrl' in job && job.applicationUrl is string) || !('applicationUrl' in job)
+             && 'createdBy' in job && job.createdBy is string
+             && 'isSponsored' in job && job.isSponsored is bool
+             && 'viewCount' in job && job.viewCount is number;
+    }
+
+    // Rules for blog posts
+    match /blog_posts/{postId} {
+      allow read: if true;
+      allow write: if request.auth != null && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    // Rules for comments
+    match /comments/{commentId} {
+      allow read: if true;
+      allow create: if request.auth != null;
+      allow update, delete: if request.auth != null && request.auth.uid == resource.data.userId;
+    }
+
+    // Allow read access to blog categories for all users
+    match /blog_categories/{categoryId} {
+      allow read: if true;
+      allow write: if request.auth != null && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    match /users/{userId}/appliedJobs/{jobId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow create, update: if request.auth != null && request.auth.uid == userId
+        && request.resource.data.userId == userId;
+      allow delete: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}
+

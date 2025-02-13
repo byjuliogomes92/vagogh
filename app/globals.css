@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,900&display=swap");
+
+html,
+body {
+  background-color: #0f172a;
+}
+
+h1,
+h2 {
+  font-family: "GeistSans", sans-serif;
+}
+
+body,
+p,
+div,
+span {
+  font-family: "Inter", sans-serif;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 15 23 42;
+  --foreground: 0 0% 95%;
+  --card: 222 47% 15%;
+  --card-foreground: 0 0% 95%;
+  --popover: 222 47% 11%;
+  --popover-foreground: 0 0% 95%;
+  --primary: 217 100% 50%;
+  --primary-foreground: 210 20% 98%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 20% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 217.9 10.6% 64.9%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 20% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 20% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 217 100% 50%;
+}
+
+.dark {
+  --background: 15 23 42;
+  --foreground: 0 0% 95%;
+  --card: 222 47% 15%;
+  --card-foreground: 0 0% 95%;
+  --popover: 222 47% 11%;
+  --popover-foreground: 0 0% 95%;
+  --primary: 217 100% 50%;
+  --primary-foreground: 210 20% 98%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 20% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 217.9 10.6% 64.9%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 20% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 20% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 217 100% 50%;
+}
+
+body {
+  @apply bg-background text-foreground;
+  font-family: "Inter", sans-serif;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .step {
+    counter-increment: step;
+  }
+
+  .step:before {
+    @apply absolute w-9 h-9 bg-muted rounded-full font-mono font-medium text-center text-base inline-flex items-center justify-center -indent-px;
+    @apply ml-[-50px] mt-[-4px];
+    content: counter(step);
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    @apply px-4;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 64px;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 0.5rem));
+  }
+}
+
+.animate-scroll {
+  animation: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+}
+
+.font-playfair {
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
