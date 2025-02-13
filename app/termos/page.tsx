@@ -32,7 +32,7 @@ export default function TermsPage() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    if (!isBrowser) return; // Garante que não roda no servidor
+    if (typeof window === "undefined") return; // Garante que não roda no servidor
 
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 300);
