@@ -20,6 +20,7 @@ export function ShareProfileModal({ isOpen, onClose, profileUrl }: ShareProfileM
       toast({
         title: "Link copiado",
         description: "O link do perfil foi copiado para a área de transferência.",
+        className: "bg-green-500 text-white",
       })
       setTimeout(() => setIsCopied(false), 2000)
     }, () => {
@@ -37,7 +38,7 @@ export function ShareProfileModal({ isOpen, onClose, profileUrl }: ShareProfileM
   }
 
   const handleShareWhatsApp = () => {
-    const whatsappShareUrl = `https://wa.me/?text=${encodeURIComponent(`Confira meu perfil no JobZera: ${profileUrl}`)}`
+    const whatsappShareUrl = `https://wa.me/?text=${encodeURIComponent(`Confira meu perfil profissional no VahGogh: ${profileUrl}`)}`
     window.open(whatsappShareUrl, '_blank')
   }
 

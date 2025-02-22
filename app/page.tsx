@@ -415,7 +415,7 @@ const Home: React.FC = () => {
         <main className="container mx-auto px-4 py-8 pt-24 pb-24 md:pb-8 flex-grow">
           {user && (
             <div
-              className="absolute top-0 left-0 right-0 z-0"
+              className="absolute top-0 left-0 right-0 z-[-1]"
               style={{
                 backgroundImage:
                   "url('https://elements-resized.envatousercontent.com/envato-shoebox/28c4/7d52-cf81-4199-99ba-5cbfa316f465/rm208batch15-eye-01.jpg?w=1600&cf_fit=scale-down&mark-alpha=18&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark4.png&q=85&format=auto&s=98b433000d4b27b7d1bc8c398e0903fad68d5a4f003f0559211ea6be64fdabf8')",
@@ -601,20 +601,7 @@ const Home: React.FC = () => {
                       </div>
                     ) : (
                       <div className="text-center mt-8 space-y-4">
-                        <p className="text-white text-xl font-semibold">
-                          Ops! Não encontramos vagas com esses filtros.
-                        </p>
-                        <p className="text-gray-400">Tente ajustar seus critérios de busca.</p>
-                        <p className="text-gray-400">Pequenas mudanças podem revelar novas oportunidades!</p>
-                        <Button
-                          onClick={() => {
-                            setFilters(initialFilters)
-                            setCurrentPage(1)
-                          }}
-                          className="mt-4 bg-[#0055FF] hover:bg-[#0044CC] text-white"
-                        >
-                          Limpar Filtros
-                        </Button>
+                        
                       </div>
                     )}
                     {paginatedJobs.length > 0 && (

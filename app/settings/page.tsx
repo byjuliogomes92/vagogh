@@ -277,10 +277,10 @@ export default function SettingsPage(): React.ReactNode {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Button type="button" variant="outline" onClick={() => fileInputRef.current?.click()}>
+                      <Button type="button" variant="outline" className="bg-[#1b2a4b]" onClick={() => fileInputRef.current?.click()}>
                         Alterar foto
                       </Button>
-                      <Button type="button" variant="outline" onClick={handleGenerateNewAvatar}>
+                      <Button type="button" variant="outline" className="bg-[#1b2a4b]" onClick={handleGenerateNewAvatar}>
                         Gerar novo avatar
                       </Button>
                     </div>

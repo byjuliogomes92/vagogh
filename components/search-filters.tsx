@@ -66,6 +66,7 @@ const jobTags = [
   { name: "UX/UI", color: "red-500 hover:bg-red-600" },
   { name: "Mobile", color: "lime-500 hover:bg-lime-600" },
   { name: "Product Manager", color: "indigo-500 hover:bg-indigo-600" },
+  { name: "CRM", color: "orange-500 hover:bg-orange-600" }
 ]
 
 const jobTitles = [
