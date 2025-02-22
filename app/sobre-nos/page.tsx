@@ -54,7 +54,7 @@ const TeamMember = ({
     <h3 className="text-xl font-semibold text-white">{name}</h3>
     <p className="text-gray-400">{role}</p>
     <Link href={linkedin} target="_blank" rel="noopener noreferrer">
-      <Button variant="outline" size="sm" className="mt-2">
+      <Button variant="outline" size="sm" className="mt-2 bg-[#1E293B]">
         LinkedIn
       </Button>
     </Link>
@@ -291,7 +291,7 @@ export default function SobreNos(): React.ReactNode {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="text-white border-white hover:bg-white hover:text-[#1C1C1C] w-full sm:w-auto"
+                    className="text-white border-white bg-[#1E293B] hover:bg-white hover:text-[#1C1C1C] w-full sm:w-auto"
                   >
                     Publicar uma Vaga
                   </Button>
@@ -300,7 +300,7 @@ export default function SobreNos(): React.ReactNode {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="text-white/70 border-white/70 cursor-not-allowed w-full sm:w-auto"
+                  className="text-white/70 border-white/70 cursor-not-allowed w-full sm:w-auto bg-[#1E293B]"
                   disabled
                 >
                   Publicar uma Vaga

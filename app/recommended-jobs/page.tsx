@@ -89,7 +89,7 @@ export default function RecommendedJobsPage() {
           <div className="flex items-center justify-between mb-8">
             <h1 className="text-3xl font-bold text-white">Vagas Recomendadas</h1>
             <Link href="/">
-              <Button variant="outline" className="text-white border-white hover:bg-white hover:text-[#0F172A]">
+              <Button variant="outline" className="text-white border-white bg-[#0F172A] hover:bg-white hover:text-[#0F172A]">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Voltar para Vagas
               </Button>

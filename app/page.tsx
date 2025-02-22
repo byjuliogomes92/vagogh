@@ -89,39 +89,49 @@ const Home: React.FC = () => {
   const jobsPerPage = 6
 
   const fetchJobs = async () => {
-    setIsLoading(true)
-    setError(null)
+    console.log("Iniciando fetchJobs...");
+    setIsLoading(true);
+    setError(null);
     try {
-      console.log("Iniciando busca de vagas...")
-      const response = await fetch("/api/jobs")
+      console.log("Fazendo requisição para /api/jobs...");
+      const response = await fetch("/api/jobs");
+      console.log("Resposta recebida:", response);
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`)
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-      const data = await response.json()
+      const data = await response.json();
+      console.log("Dados recebidos:", data);
       if (!data.success) {
-        throw new Error(data.error || "Failed to fetch jobs")
+        throw new Error(data.error || "Failed to fetch jobs");
       }
-      console.log("Vagas recebidas:", data.jobs)
-      setJobs(data.jobs)
-      if (!user) {
-        incrementSearchCount()
+      console.log("Vagas recebidas:", data.jobs);
+      setJobs(data.jobs);
+      if (!user && searchCount < 5) {
+        incrementSearchCount();
       }
     } catch (err) {
-      console.error("Error fetching jobs:", err)
-      setError("Failed to load jobs. Please try again later.")
+      console.error("Erro ao buscar vagas:", err);
+      setError("Failed to load jobs. Please try again later.");
       toast({
         title: "Error",
         description: "Failed to load jobs. Please try again later.",
         variant: "destructive",
-      })
+      });
     } finally {
-      setIsLoading(false)
+      console.log("Finalizando fetchJobs...");
+      setIsLoading(false);
     }
-  }
+  };
 
   useEffect(() => {
-    fetchJobs()
-  }, [filters, sortBy, currentPage, user, searchCount])
+    console.log("useEffect chamado", { filters, sortBy, currentPage, user, searchCount, jobsLength: jobs.length });
+    if (jobs.length === 0) { // Remova a condição !isLoading
+      console.log("Chamando fetchJobs...");
+      fetchJobs();
+    } else {
+      console.log("Condição NÃO atendida: jobs.length =", jobs.length);
+    }
+  }, [filters, sortBy, currentPage, user, searchCount]);
 
   useEffect(() => {
     const loadSavedFilters = async () => {
@@ -197,9 +207,11 @@ const Home: React.FC = () => {
   }, [])
 
   const handleFilterChange = useCallback((key: keyof FilterCriteria, value: any) => {
-    console.log(`Filter changed: ${key} = ${value}`)
-    setFilters((prev) => ({ ...prev, [key]: value }))
-  }, [])
+    setFilters((prev) => {
+      if (prev[key] === value) return prev; // Evita atualização desnecessária
+      return { ...prev, [key]: value };
+    });
+  }, []);
 
   const handleSaveFilter = useCallback(
     (name: string, filter: FilterCriteria) => {
@@ -220,7 +232,7 @@ const Home: React.FC = () => {
   }, [])
 
   const handleSearch = () => {
-    if (!user && searchCount >= 5) {
+    if (!user && searchCount >= 15) {
       setIsLimitReachedModalOpen(true)
     } else {
       fetchJobs()
@@ -245,6 +257,7 @@ const Home: React.FC = () => {
   }, [searchValue])
 
   const filteredJobs = useMemo(() => {
+    console.log("Recalculando filteredJobs...");
     return jobs.filter((job) => {
       const matchesSearch =
         (job.title?.toLowerCase() || "").includes(filters.search.toLowerCase()) ||
@@ -321,6 +334,9 @@ const Home: React.FC = () => {
   }, [jobs, filters])
 
   const sortedJobs = useMemo(() => {
+    console.log("Recalculando sortedJobs...");
+    if (filteredJobs.length === 0) return [];
+    if (jobs.length === 0) return [];
     return [...filteredJobs].sort((a, b) => {
       if (sortBy === "recent") {
         return new Date(b.posted).getTime() - new Date(a.posted).getTime()
@@ -413,7 +429,7 @@ const Home: React.FC = () => {
           )}
           {user && (
             <motion.h3
-              className="text-3xl font-black italic text-[#F7D047] mb-4 font-playfair text-center"
+              className="text-3xl font-black text-[#f8f5ff] mb-4 font-playfair text-center"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}

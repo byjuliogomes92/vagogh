@@ -43,7 +43,7 @@ export function ShareProfileModal({ isOpen, onClose, profileUrl }: ShareProfileM
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-md bg-[#0F172A]">
         <DialogHeader>
           <DialogTitle>Compartilhar Perfil</DialogTitle>
         </DialogHeader>
@@ -51,18 +51,18 @@ export function ShareProfileModal({ isOpen, onClose, profileUrl }: ShareProfileM
           <Input
             value={profileUrl}
             readOnly
-            className="flex-1"
+            className="flex-1 bg-[#0a101e]"
           />
           <Button onClick={handleCopyLink} variant="secondary">
             {isCopied ? "Copiado!" : <Copy className="h-4 w-4" />}
           </Button>
         </div>
         <div className="flex justify-center space-x-4 mt-4">
-          <Button onClick={handleShareLinkedIn} variant="outline">
+          <Button onClick={handleShareLinkedIn} variant="outline" className='bg-[#0055FF]'>
             <Linkedin className="h-4 w-4 mr-2" />
             LinkedIn
           </Button>
-          <Button onClick={handleShareWhatsApp} variant="outline">
+          <Button onClick={handleShareWhatsApp} variant="outline" className='bg-[#0055FF]'>
             <Share2 className="h-4 w-4 mr-2" />
             WhatsApp
           </Button>

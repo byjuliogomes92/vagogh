@@ -115,7 +115,7 @@ export function JobFolders({ onSelectFolder, selectedFolder }: JobFoldersProps) 
         <h2 className="text-xl font-semibold text-white">Pastas</h2>
         <Dialog open={isAddingFolder} onOpenChange={setIsAddingFolder}>
           <DialogTrigger asChild>
-            <Button variant="outline" size="sm" onClick={() => setIsAddingFolder(true)}>
+            <Button variant="outline" size="sm" onClick={() => setIsAddingFolder(true)} className="bg-[#0055FF]">
               <Plus className="w-4 h-4 mr-2" />
               Nova Pasta
             </Button>
@@ -156,7 +156,7 @@ export function JobFolders({ onSelectFolder, selectedFolder }: JobFoldersProps) 
       <div className="space-y-2">
         <Button
           variant={selectedFolder === null ? "default" : "outline"}
-          className="w-full justify-start"
+          className="w-full justify-start bg-[#1E293B]"
           onClick={() => onSelectFolder(null)}
         >
           <Folder className="w-4 h-4 mr-2" />
@@ -166,7 +166,7 @@ export function JobFolders({ onSelectFolder, selectedFolder }: JobFoldersProps) 
           <div key={folder.id} className="flex items-center space-x-2">
             <Button
               variant={selectedFolder === folder.id ? "default" : "outline"}
-              className="w-full justify-start"
+              className="w-full justify-start bg-[#1E293B]"
               onClick={() => onSelectFolder(folder.id)}
             >
               <Folder className="w-4 h-4 mr-2" />
