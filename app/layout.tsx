@@ -27,6 +27,14 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" suppressHydrationWarning className={`${inter.className} ${playfair.variable}`}>
+      <head>
+        {/* Google AdSense Script */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3740996068844300"
+          crossOrigin="anonymous"
+        ></script>
+      </head>
       <body suppressHydrationWarning>
         <ScrollToTop />
         <ClientWrapper>{children}</ClientWrapper>
