@@ -456,7 +456,7 @@ const Home: React.FC = () => {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5 }}
                     >
-                      Trabalhe de qualquer lugar, até do sofá
+                      Trabalhe de qualquer lugar, até do sofá!
                     </motion.h1>
                     <motion.p
                       className="text-xl text-gray-300 mb-6"
