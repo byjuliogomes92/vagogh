@@ -6,7 +6,7 @@ import { Search, Briefcase, UserCircle, Bell } from "lucide-react"
 
 const steps = [
   {
-    title: "Bem-vindo ao JobZera!",
+    title: "Bem-vindo à VaGogh!",
     description:
       "Estamos felizes em tê-lo conosco. Vamos dar uma olhada rápida em como você pode aproveitar ao máximo nossa plataforma.",
     icon: <Briefcase className="w-12 h-12 text-[#7C3AED]" />,

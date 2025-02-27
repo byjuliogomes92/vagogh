@@ -61,7 +61,7 @@ export function JobFilters() {
               <Badge
                 key={level.id}
                 variant="outline"
-                className="cursor-pointer hover:bg-[#0055FF] hover:text-white dark:hover:bg-[#70B5F9] dark:hover:text-gray-900 border-[#0055FF] text-[#0055FF] dark:border-[#70B5F9] dark:text-[#70B5F9]"
+                className="cursor-pointer hover:bg-[#7333DD] hover:text-white dark:hover:bg-[#70B5F9] dark:hover:text-gray-900 border-[#7333DD] text-[#7333DD] dark:border-[#70B5F9] dark:text-[#70B5F9]"
               >
                 {level.label}
               </Badge>
@@ -69,7 +69,7 @@ export function JobFilters() {
           </div>
         </div>
 
-        <Button className="w-full bg-[#0055FF] hover:bg-[#0044CC] text-white dark:bg-[#70B5F9] dark:hover:bg-[#4A90E2] dark:text-gray-900">
+        <Button className="w-full bg-[#7333DD] hover:bg-[#5d20c0] text-white dark:bg-[#70B5F9] dark:hover:bg-[#4A90E2] dark:text-gray-900">
           Aplicar Filtros
         </Button>
       </CardContent>

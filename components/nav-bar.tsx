@@ -71,7 +71,7 @@ export function NavBar() {
         <div className="flex items-center">
           <Link href="/" className="flex items-center" onClick={closeMobileMenu}>
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo_vagogh-d2gfUGHItIU3bsTiAhJ48L4H02j8S5.svg"
+              src="https://raw.githubusercontent.com/byjuliogomes92/vagogh/fd7ff6dc54748c6729ffa12e4a8f79f108a312df/public/logo.svg"
               alt="VaGogh"
               width={120}
               height={120}
@@ -166,7 +166,7 @@ export function NavBar() {
                 <DropdownMenuItem asChild>
                   <Link
                     href="/profile"
-                    className="text-white hover:bg-[#0055FF] hover:scale-105 flex items-center py-3 px-4 text-base w-full rounded-lg transition-all duration-300"
+                    className="text-white hover:bg-[#7333DD] hover:scale-105 flex items-center py-3 px-4 text-base w-full rounded-lg transition-all duration-300"
                     onClick={closeMobileMenu}
                   >
                     <User className="mr-3 h-5 w-5" />
@@ -177,7 +177,7 @@ export function NavBar() {
                   <DropdownMenuItem asChild>
                     <Link
                       href="/admin"
-                      className="text-white hover:bg-[#0055FF] hover:scale-105 flex items-center py-3 px-4 text-base w-full rounded-lg transition-all duration-300"
+                      className="text-white hover:bg-[#7333DD] hover:scale-105 flex items-center py-3 px-4 text-base w-full rounded-lg transition-all duration-300"
                       onClick={closeMobileMenu}
                     >
                       <LayoutDashboard className="mr-3 h-5 w-5" />
@@ -187,7 +187,7 @@ export function NavBar() {
                 )}
                 <DropdownMenuItem
                   onClick={handleLogout}
-                  className="text-white hover:bg-[#0055FF] hover:scale-105 flex items-center py-3 px-4 text-base w-full rounded-lg transition-all duration-300"
+                  className="text-white hover:bg-[#7333DD] hover:scale-105 flex items-center py-3 px-4 text-base w-full rounded-lg transition-all duration-300"
                 >
                   <LogOut className="mr-3 h-5 w-5" />
                   <span className="flex-grow">Sair</span>
@@ -221,7 +221,7 @@ export function NavBar() {
             </div>
           )}
           <button
-            className="md:hidden text-foreground hover:text-[#0055FF]"
+            className="md:hidden text-foreground hover:text-[#7333DD]"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -311,7 +311,7 @@ export function NavBar() {
                 </Link>
                 <Link
                   href="/signup"
-                  className="block px-3 py-2 rounded-md text-base font-medium text-white bg-[#0055FF] hover:bg-[#0044CC]"
+                  className="block px-3 py-2 rounded-md text-base font-medium text-white bg-[#7333DD] hover:bg-[#5d20c0]"
                   onClick={closeMobileMenu}
                 >
                   Comece aqui

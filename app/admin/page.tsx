@@ -140,7 +140,7 @@ const AdminDashboard: React.FC = () => {
                   <TableCell>{job.posted.toLocaleDateString()}</TableCell>
                   <TableCell>
                     <Link href={`/admin/edit-job/${job.id}`}>
-                      <Button variant="outline" className="mr-2">
+                      <Button variant="outline" className="bg-[#7333DD] mr-2">
                         Editar
                       </Button>
                     </Link>
@@ -161,7 +161,7 @@ const AdminDashboard: React.FC = () => {
       <div className="mt-8">
         <h2 className="text-xl font-bold text-white mb-4">Configurações</h2>
         <div className="flex items-center space-x-2">
-          <Switch checked={isJobPostingEnabled} onCheckedChange={toggleJobPostingStatus} />
+          <Switch checked={isJobPostingEnabled} onCheckedChange={toggleJobPostingStatus} className="bg-[#7333DD]" />
           <span className="text-white">
             {isJobPostingEnabled ? "Desativar" : "Ativar"} página de publicação de vagas
           </span>

@@ -100,7 +100,7 @@ const LoginPage: React.FC = () => {
                 {error && <p className="text-red-500 text-sm">{error}</p>}
                 <Button
                   type="submit"
-                  className="w-full bg-[#0055FF] hover:bg-[#0044CC] text-white font-semibold transition-all duration-300"
+                  className="w-full bg-[#7333DD] hover:bg-[#5d20c0] text-white font-semibold transition-all duration-300"
                   disabled={isLoading}
                 >
                   {isLoading ? "Entrando..." : "Entrar"}

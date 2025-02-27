@@ -21,7 +21,7 @@ export function SignupPromptModal({ isOpen, onClose }: SignupPromptModalProps) {
             agora!
           </p>
           <div className="flex flex-col space-y-2">
-            <Button asChild className="bg-[#0055FF] hover:bg-[#0044CC] text-white">
+            <Button asChild className="bg-[#7333DD] hover:bg-[#5d20c0] text-white">
               <Link href="/signup">Criar Conta Grátis</Link>
             </Button>
             <Button variant="outline" onClick={onClose}>
@@ -30,7 +30,7 @@ export function SignupPromptModal({ isOpen, onClose }: SignupPromptModalProps) {
           </div>
           <p className="text-sm text-gray-400">
             Já tem uma conta?{" "}
-            <Link href="/login" className="text-[#0055FF] hover:underline">
+            <Link href="/login" className="text-[#7333DD] hover:underline">
               Faça login
             </Link>
           </p>

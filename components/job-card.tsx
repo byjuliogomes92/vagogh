@@ -184,7 +184,7 @@ export function JobCard({
         description: (
           <div>
             Você precisa ter uma conta para salvar vagas.{" "}
-            <Link href="/signup" className="text-[#0055FF] hover:underline">
+            <Link href="/signup" className="text-[#7333DD] hover:underline">
               Cadastre-se agora
             </Link>
             !
@@ -245,7 +245,7 @@ export function JobCard({
         description: (
           <div>
             Você precisa ter uma conta para marcar vagas como aplicadas.{" "}
-            <Link href="/signup" className="text-[#0055FF] hover:underline">
+            <Link href="/signup" className="text-[#7333DD] hover:underline">
               Cadastre-se agora
             </Link>
             !
@@ -418,7 +418,7 @@ export function JobCard({
               }
             }}
           >
-            <Button className="w-full bg-[#0055FF] hover:bg-[#0044CC] text-white">Detalhes</Button>
+            <Button className="w-full bg-[#7333DD] hover:bg-[#5d20c0] text-white">Detalhes</Button>
           </Link>
         </div>
 

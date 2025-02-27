@@ -62,7 +62,7 @@ export default function SignupPage(): React.ReactNode {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className="bg-[#0055FF] p-2 rounded-lg">
+                  <div className="bg-[#7333DD] p-2 rounded-lg">
                     <benefit.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>

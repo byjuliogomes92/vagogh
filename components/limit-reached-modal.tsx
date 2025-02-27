@@ -67,13 +67,13 @@ export function LimitReachedModal({ isOpen, limitType }: LimitReachedModalProps)
         <div className="mt-6 flex justify-center space-x-4">
           <Button
             onClick={handleLogin}
-            className="bg-gradient-to-r from-[#3B82F6] to-[#2563EB] hover:from-[#2563EB] hover:to-[#1D4ED8] text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105"
+            className="bg-gradient-to-r from-[#7333DD] to-[#5d20c0] hover:from-[#2563EB] hover:to-[#1D4ED8] text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105"
           >
             Fazer Login
           </Button>
           <Button
             onClick={handleSignup}
-            className="bg-gradient-to-r from-[#3B82F6] to-[#2563EB] hover:from-[#2563EB] hover:to-[#1D4ED8] text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105"
+            className="bg-gradient-to-r from-[#7333DD] to-[#5d20c0] hover:from-[#2563EB] hover:to-[#1D4ED8] text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105"
           >
             Criar Conta Grátis
           </Button>

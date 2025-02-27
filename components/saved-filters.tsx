@@ -117,7 +117,7 @@ export function SavedFilters({ onApply }: SavedFiltersProps) {
                         <Button
                           size="sm"
                           onClick={() => onApply(filter.filter)}
-                          className="bg-[#0055FF] hover:bg-[#0044CC] text-white"
+                          className="bg-[#7333DD] hover:bg-[#5d20c0] text-white"
                         >
                           <Filter className="w-4 h-4 mr-2" />
                           Aplicar

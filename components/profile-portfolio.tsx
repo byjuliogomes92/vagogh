@@ -71,7 +71,7 @@ export function ProfilePortfolio({ user, isEditing, onSave }: ProfilePortfolioPr
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#0055FF] hover:text-[#0044CC]"
+                  className="text-[#7333DD] hover:text-[#5d20c0]"
                 >
                   {link.title}
                 </a>
@@ -94,7 +94,7 @@ export function ProfilePortfolio({ user, isEditing, onSave }: ProfilePortfolioPr
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center text-[#0055FF] hover:text-[#0044CC]"
+                className="flex items-center text-[#7333DD] hover:text-[#5d20c0]"
               >
                 <ExternalLink className="mr-2 h-4 w-4" />
                 {link.title}

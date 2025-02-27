@@ -56,7 +56,7 @@ export function ProfileSkills({ user, isEditing, onSave }: ProfileSkillsProps) {
                   }}
                 />
               </motion.div>
-              <Button onClick={handleAddSkill} className="bg-[#0055FF] hover:bg-[#0044CC] text-white">
+              <Button onClick={handleAddSkill} className="bg-[#7333DD] hover:bg-[#5d20c0] text-white">
                 Adicionar
               </Button>
             </motion.div>
@@ -73,7 +73,7 @@ export function ProfileSkills({ user, isEditing, onSave }: ProfileSkillsProps) {
               ))}
             </motion.div>
           </motion.div>
-          <Button onClick={handleSave} className="w-full bg-[#0055FF] hover:bg-[#0044CC] text-white">
+          <Button onClick={handleSave} className="w-full bg-[#7333DD] hover:bg-[#5d20c0] text-white">
             Salvar Alterações
           </Button>
         </>

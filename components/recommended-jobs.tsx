@@ -163,7 +163,7 @@ export function RecommendedJobs() {
               Continue atualizando seu perfil para receber recomendações personalizadas.
             </p>
             <Link href="/">
-              <Button className="bg-[#0055FF] hover:bg-[#0044CC] text-white">Explorar Vagas</Button>
+              <Button className="bg-[#7333DD] hover:bg-[#5d20c0] text-white">Explorar Vagas</Button>
             </Link>
           </div>
         )}

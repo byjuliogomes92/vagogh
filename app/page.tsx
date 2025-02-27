@@ -371,7 +371,7 @@ const Home: React.FC = () => {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
-      <div className="bg-gradient-to-r from-[#0055FF] to-[#0044CC] rounded-full p-3 inline-block mb-4">
+      <div className="bg-gradient-to-r from-[#7333DD] to-[#5d20c0] rounded-full p-3 inline-block mb-4">
         <Icon className="w-8 h-8 text-white" />
       </div>
       <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
@@ -579,7 +579,7 @@ const Home: React.FC = () => {
                     <p className="text-red-500 text-xl">{error}</p>
                     <Button
                       onClick={() => window.location.reload()}
-                      className="mt-4 bg-[#0055FF] hover:bg-[#0044CC] text-white"
+                      className="mt-4 bg-[#7333DD] hover:bg-[#5d20c0] text-white"
                     >
                       Tentar novamente
                     </Button>
@@ -626,7 +626,7 @@ const Home: React.FC = () => {
                         setFilters(initialFilters)
                         setCurrentPage(1)
                       }}
-                      className="mt-4 bg-[#0055FF] hover:bg-[#0044CC] text-white"
+                      className="mt-4 bg-[#7333DD] hover:bg-[#5d20c0] text-white"
                     >
                       Limpar Filtros
                     </Button>
@@ -677,7 +677,7 @@ const Home: React.FC = () => {
                   <Link href="/signup" className="inline-block">
                     <Button
                       size="lg"
-                      className="bg-[#0055FF] hover:bg-[#0044CC] text-white font-semibold transition-all duration-300 flex items-center space-x-2"
+                      className="bg-[#7333DD] hover:bg-[#5d20c0] text-white font-semibold transition-all duration-300 flex items-center space-x-2"
                     >
                       Comece Sua Jornada Agora
                       <ArrowRight className="ml-2 h-5 w-5" />
@@ -717,7 +717,7 @@ const Home: React.FC = () => {
                     />
                     <Button
                       type="submit"
-                      className="bg-[#0055FF] hover:bg-[#0044CC] text-white font-semibold transition-all duration-300 flex items-center space-x-2"
+                      className="bg-[#7333DD] hover:bg-[#5d20c0] text-white font-semibold transition-all duration-300 flex items-center space-x-2"
                     >
                       <Send className="mr-2 h-4 w-4" />
                       <span>Inscrever-se</span>
@@ -762,7 +762,7 @@ const Home: React.FC = () => {
       {user && <BottomNavBar />}
       {showScrollTop && (
         <Button
-          className="fixed bottom-8 right-8 bg-[#0055FF] hover:bg-[#0044CC] text-white rounded-full p-2 z-50"
+          className="fixed bottom-8 right-8 bg-[#7333DD] hover:bg-[#5d20c0] text-white rounded-full p-2 z-50"
           onClick={scrollToTop}
         >
           <ChevronUp className="h-6 w-6" />

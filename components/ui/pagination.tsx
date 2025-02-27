@@ -66,7 +66,7 @@ export function Pagination({ totalItems, itemsPerPage, currentPage, onPageChange
               onClick={() => onPageChange(number as number)}
               className={
                 currentPage === number
-                  ? "bg-[#0055FF] text-white"
+                  ? "bg-[#7333DD] text-white"
                   : "bg-[#1E293B] text-white hover:bg-[#2C3E50] border-gray-700"
               }
             >

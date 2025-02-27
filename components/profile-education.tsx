@@ -90,7 +90,7 @@ export function ProfileEducation({ user, isEditing, onSave }: ProfileEducationPr
           >
             <Plus className="h-4 w-4 mr-2" /> Adicionar Educação
           </Button>
-          <Button onClick={handleSave} className="w-full bg-[#0055FF] hover:bg-[#0044CC] text-white">
+          <Button onClick={handleSave} className="w-full bg-[#7333DD] hover:bg-[#5d20c0] text-white">
             Salvar Alterações
           </Button>
         </>

@@ -115,7 +115,7 @@ export function JobFolders({ onSelectFolder, selectedFolder }: JobFoldersProps) 
         <h2 className="text-xl font-semibold text-white">Pastas</h2>
         <Dialog open={isAddingFolder} onOpenChange={setIsAddingFolder}>
           <DialogTrigger asChild>
-            <Button variant="outline" size="sm" onClick={() => setIsAddingFolder(true)} className="bg-[#0055FF]">
+            <Button variant="outline" size="sm" onClick={() => setIsAddingFolder(true)} className="bg-[#7333DD]">
               <Plus className="w-4 h-4 mr-2" />
               Nova Pasta
             </Button>

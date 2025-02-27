@@ -127,7 +127,7 @@ export function ProfileExperience({ user, isEditing, onSave }: ProfileExperience
             <Plus className="w-4 h-4 mr-2" />
             Adicionar Experiência
           </Button>
-          <Button onClick={handleSave} className="w-full bg-[#0055FF] hover:bg-[#0044CC] text-white">
+          <Button onClick={handleSave} className="w-full bg-[#7333DD] hover:bg-[#0044CC] text-white">
             Salvar Alterações
           </Button>
         </>

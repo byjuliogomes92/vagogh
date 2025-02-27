@@ -619,7 +619,7 @@ export function SearchFilters({ filters, onFilterChange, onSaveFilter }: SearchF
                 <div className="flex justify-end">
                   <Button
                     onClick={() => setIsSaveModalOpen(true)}
-                    className="bg-[#0055FF] hover:bg-[#0044CC] text-white"
+                    className="bg-[#7333DD] hover:bg-[#5d20c0] text-white"
                   >
                     <Save className="w-4 h-4 mr-2" />
                     Salvar Filtro
@@ -644,7 +644,7 @@ export function SearchFilters({ filters, onFilterChange, onSaveFilter }: SearchF
             />
             <Button
               onClick={() => handleSaveFilter(filterName)}
-              className="w-full bg-[#0055FF] hover:bg-[#0044CC] text-white"
+              className="w-full bg-[#7333DD] hover:bg-[#5d20c0] text-white"
             >
               Salvar
             </Button>

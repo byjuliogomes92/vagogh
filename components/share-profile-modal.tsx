@@ -59,11 +59,11 @@ export function ShareProfileModal({ isOpen, onClose, profileUrl }: ShareProfileM
           </Button>
         </div>
         <div className="flex justify-center space-x-4 mt-4">
-          <Button onClick={handleShareLinkedIn} variant="outline" className='bg-[#0055FF]'>
+          <Button onClick={handleShareLinkedIn} variant="outline" className='bg-[#7333DD]'>
             <Linkedin className="h-4 w-4 mr-2" />
             LinkedIn
           </Button>
-          <Button onClick={handleShareWhatsApp} variant="outline" className='bg-[#0055FF]'>
+          <Button onClick={handleShareWhatsApp} variant="outline" className='bg-[#7333DD]'>
             <Share2 className="h-4 w-4 mr-2" />
             WhatsApp
           </Button>

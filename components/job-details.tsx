@@ -196,7 +196,7 @@ export function JobDetails({
         description: (
           <div>
             Você precisa ter uma conta para salvar vagas.{" "}
-            <Link href="/signup" className="text-[#0055FF] hover:underline">
+            <Link href="/signup" className="text-[#7333DD] hover:underline">
               Cadastre-se agora
             </Link>
             !
@@ -299,7 +299,7 @@ Confira mais detalhes em: ${shareUrl}`)}`,
         description: (
           <div>
             Você precisa ter uma conta para marcar vagas como aplicadas.{" "}
-            <Link href="/signup" className="text-[#0055FF] hover:underline">
+            <Link href="/signup" className="text-[#7333DD] hover:underline">
               Cadastre-se agora
             </Link>
             !
@@ -396,7 +396,7 @@ Confira mais detalhes em: ${shareUrl}`)}`,
               </div>
             </div>
             <div className="flex flex-row flex-wrap gap-4 sm:flex-col sm:items-end">
-              <Button className="bg-[#0055FF] hover:bg-[#0044CC] text-white font-bold py-3 px-6 rounded-full shadow-lg transform transition duration-300 ease-in-out hover:scale-105 flex-grow sm:w-auto flex items-center justify-center">
+              <Button className="bg-[#7333DD] hover:bg-[#5d20c0] text-white font-bold py-3 px-6 rounded-full shadow-lg transform transition duration-300 ease-in-out hover:scale-105 flex-grow sm:w-auto flex items-center justify-center">
                 <Link
                   href={`${applicationUrl}${applicationUrl.includes("?") ? "&" : "?"}utm_source=vagogh&utm_medium=referral&utm_campaign=${encodeURIComponent(title.replace(/\s+/g, "-"))}`}
                   target="_blank"
@@ -412,8 +412,8 @@ Confira mais detalhes em: ${shareUrl}`)}`,
                   variant="outline"
                   onClick={handleSaveJob}
                   className={`p-2 ${
-                    isSaved ? "bg-[#0055FF] text-white" : "bg-white/10 text-white"
-                  } hover:bg-[#0044CC] hover:text-white rounded-full`}
+                    isSaved ? "bg-[#7333DD] text-white" : "bg-white/10 text-white"
+                  } hover:bg-[#5d20c0] hover:text-white rounded-full`}
                 >
                   <Bookmark className={`h-5 w-5 ${isSaved ? "fill-current" : ""}`} />
                 </Button>
@@ -516,7 +516,7 @@ Confira mais detalhes em: ${shareUrl}`)}`,
               <ul className="space-y-2 sm:space-y-3">
                 {requirements.map((req, index) => (
                   <li key={index} className="flex items-start gap-2 sm:gap-3 text-gray-300 text-sm sm:text-base">
-                    <span className="text-[#0055FF] mt-1">•</span>
+                    <span className="text-[#7333DD] mt-1">•</span>
                     <span>{req}</span>
                   </li>
                 ))}
@@ -528,7 +528,7 @@ Confira mais detalhes em: ${shareUrl}`)}`,
               <ul className="space-y-2 sm:space-y-3">
                 {benefits.map((benefit, index) => (
                   <li key={index} className="flex items-start gap-2 sm:gap-3 text-gray-300 text-sm sm:text-base">
-                    <span className="text-[#0055FF] mt-1">•</span>
+                    <span className="text-[#7333DD] mt-1">•</span>
                     <span>{benefit}</span>
                   </li>
                 ))}
@@ -550,7 +550,7 @@ Confira mais detalhes em: ${shareUrl}`)}`,
           </div>
 
           <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-400 pt-4 sm:pt-6 border-t border-gray-700">
-            <Clock className="h-3 w-3 sm:h-4 sm:w-4 text-[#0055FF]" />
+            <Clock className="h-3 w-3 sm:h-4 sm:w-4 text-[#7333DD]" />
             <span>Publicado {formatDate(posted)}</span>
           </div>
         </div>
@@ -565,7 +565,7 @@ Confira mais detalhes em: ${shareUrl}`)}`,
             Crie uma conta para ver o quanto seu perfil é compatível com esta vaga e aumente suas chances de ser
             contratado!
           </p>
-          <Button asChild className="w-full bg-[#0055FF] hover:bg-[#0044CC] text-white">
+          <Button asChild className="w-full bg-[#7333DD] hover:bg-[#5d20c0] text-white">
             <Link href="/signup">Criar conta</Link>
           </Button>
         </Card>
@@ -603,7 +603,7 @@ Confira mais detalhes em: ${shareUrl}`)}`,
         <Card className="mt-8 bg-[#1E293B] border-gray-700">
           <CardContent className="text-center py-8">
             <p className="text-white text-lg mb-4">Crie uma conta para ver informações e mais vagas desta empresa.</p>
-            <Button asChild className="bg-[#0055FF] hover:bg-[#0044CC] text-white">
+            <Button asChild className="bg-[#7333DD] hover:bg-[#5d20c0] text-white">
               <Link href="/signup">Criar Conta</Link>
             </Button>
           </CardContent>

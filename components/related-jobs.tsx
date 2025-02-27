@@ -114,7 +114,7 @@ export function RelatedJobs({ currentJob }: RelatedJobsProps) {
         ))}
       </div>
       <div className="mt-8 text-center">
-        <Button className="bg-[#0055FF] hover:bg-[#0044CC] text-white">
+        <Button className="bg-[#7333DD] hover:bg-[#5d20c0] text-white">
           Ver mais vagas
           <ArrowRight className="ml-2 h-4 w-4" />
         </Button>

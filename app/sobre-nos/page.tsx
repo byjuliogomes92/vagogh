@@ -17,7 +17,7 @@ const FeatureCard = ({ icon: Icon, title, description }: { icon: any; title: str
     <Card className="bg-[#1E293B] border-none h-full">
       <CardHeader>
         <CardTitle className="flex items-center space-x-2">
-          <Icon className="w-6 h-6 text-[#0055FF]" />
+          <Icon className="w-6 h-6 text-[#7333DD]" />
           <span>{title}</span>
         </CardTitle>
       </CardHeader>
@@ -49,7 +49,7 @@ const TeamMember = ({
       alt={name}
       width={120}
       height={120}
-      className="rounded-full border-4 border-[#0055FF]"
+      className="rounded-full border-4 border-[#7333DD]"
     />
     <h3 className="text-xl font-semibold text-white">{name}</h3>
     <p className="text-gray-400">{role}</p>
@@ -170,7 +170,7 @@ export default function SobreNos(): React.ReactNode {
               oportunidade está a um clique de distância.
             </p>
             <Link href="/signup">
-              <Button size="lg" className="bg-[#0055FF] hover:bg-[#0044CC] text-white text-lg">
+              <Button size="lg" className="bg-[#7333DD] hover:bg-[#5d20c0] text-white text-lg">
                 Comece Sua Jornada <ArrowRight className="ml-2" />
               </Button>
             </Link>
@@ -242,7 +242,7 @@ export default function SobreNos(): React.ReactNode {
               />
               <TeamMember
                 name="Íngrid Dayana"
-                role="Co-fundadora & Designer"
+                role="Co-fundadora & Gerente de Marketing"
                 image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1734031699993.jpg-hy05nITCGatfdfBzIMSOBf461L2Qmq.jpeg"
                 linkedin="https://www.linkedin.com/in/ingridnogueira/"
               />
@@ -282,7 +282,7 @@ export default function SobreNos(): React.ReactNode {
             </p>
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <Link href="/signup">
-                <Button size="lg" className="bg-[#0055FF] hover:bg-[#0044CC] text-white w-full sm:w-auto">
+                <Button size="lg" className="bg-[#7333DD] hover:bg-[#5d20c0] text-white w-full sm:w-auto">
                   Cadastre-se Gratuitamente
                 </Button>
               </Link>
