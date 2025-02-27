@@ -11,7 +11,6 @@ import { db } from "@/lib/firebase"
 import { query, collection, getDocs } from "firebase/firestore"
 import { toast } from "@/components/ui/use-toast"
 import { motion, AnimatePresence } from "framer-motion"
-import { WorldMap } from "@/components/world-map"
 import { Button } from "@/components/ui/button"
 import { Pagination } from "@/components/ui/pagination"
 import Image from "next/image"
@@ -408,7 +407,6 @@ const Home: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#0f172a]">
-      <WorldMap />
       <div className="relative z-10 flex flex-col flex-grow">
         <DonationBanner />
         <NavBar />

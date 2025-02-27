@@ -61,14 +61,14 @@ interface JobCardProps {
 }
 
 const pastelColors = [
-  "bg-[#FFE5E5]", // Pastel Red
-  "bg-[#FFE8F0]", // Pastel Pink
-  "bg-[#E5E5FF]", // Pastel Blue
-  "bg-[#FFFFE5]", // Pastel Yellow
-  "bg-[#FFE5FF]", // Pastel Purple
-  "bg-[#E5FFFF]", // Pastel Cyan
-  "bg-[#FFF0E5]", // Pastel Orange
-  "bg-[#E5F0FF]", // Pastel Light Blue
+  "bg-[#fde8ed]", // Pastel Red
+  "bg-[#d0dee2]", // Pastel Pink
+  "bg-[#f3e0ff]", // Pastel Blue
+  "bg-[#d4eed7]", // Pastel Yellow
+  "bg-[#fdfade]", // Pastel Purple
+  "bg-[#fff4e0]", // Pastel Cyan
+  "bg-[#d6c4d6]", // Pastel Orange
+  "bg-[#ecf5ff]", // Pastel Light Blue
 ]
 
 const getCardColor = (index: number) => {

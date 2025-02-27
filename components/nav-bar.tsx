@@ -71,7 +71,7 @@ export function NavBar() {
         <div className="flex items-center">
           <Link href="/" className="flex items-center" onClick={closeMobileMenu}>
             <Image
-              src="https://raw.githubusercontent.com/byjuliogomes92/vagogh/fd7ff6dc54748c6729ffa12e4a8f79f108a312df/public/logo.svg"
+              src="https://raw.githubusercontent.com/byjuliogomes92/vagogh/94fcea45233b67d01f2315ff2e822375cbb09785/public/logo.svg"
               alt="VaGogh"
               width={120}
               height={120}

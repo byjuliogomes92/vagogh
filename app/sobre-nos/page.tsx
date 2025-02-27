@@ -81,33 +81,33 @@ export default function SobreNos(): React.ReactNode {
   const features = [
     {
       icon: Globe,
-      title: "Alcance Global",
-      description: "Conecte-se com oportunidades de trabalho remoto de empresas do mundo todo.",
+      title: "Foco no remoto",
+      description: "As melhores oportunidades para trabalhar online, sem limitações geográficas.",
     },
     {
       icon: Users,
-      title: "Comunidade Ativa",
-      description: "Faça parte de uma comunidade vibrante de profissionais remotos e empresas inovadoras.",
+      title: "Vagas híbridas também",
+      description: "Para quem deseja um equilíbrio entre escritório e home office.",
     },
     {
       icon: Zap,
-      title: "Tecnologia Avançada",
-      description: "Nossa plataforma utiliza IA para matching perfeito entre candidatos e vagas.",
+      title: "Filtros avançados",
+      description: "Encontre as vagas que mais se alinham com o seu perfil, experiência e preferências.",
     },
     {
       icon: Coffee,
-      title: "Cultura Remota",
-      description: "Promovemos e valorizamos a cultura do trabalho remoto e flexível.",
+      title: "Avisos periódicos de vagas por e-mail",
+      description: "Receba atualizações sobre novas oportunidades diretamente na sua caixa de entrada.",
     },
     {
       icon: Briefcase,
-      title: "Vagas de Qualidade",
-      description: "Curadoria das melhores oportunidades de trabalho remoto do mercado.",
+      title: "IA para compatibilidade de vagas",
+      description: "Nossa tecnologia ajuda a identificar as vagas que têm mais chances de se encaixar no seu perfil profissional.",
     },
     {
       icon: Search,
-      title: "Busca Inteligente",
-      description: "Ferramentas avançadas para encontrar a vaga ideal para o seu perfil.",
+      title: "Atualizações constantes",
+      description: "Oportunidades novas todos os dias, filtradas para quem busca flexibilidade e qualidade de vida.",
     },
   ]
 
@@ -163,12 +163,41 @@ export default function SobreNos(): React.ReactNode {
             transition={{ duration: 0.5 }}
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6 font-playfair italic text-[#F7D047]">
-              Descubra o Futuro do Trabalho Remoto
+            Seu talento, sem fronteiras.
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              O VaGogh conecta profissionais talentosos a oportunidades globais de trabalho remoto. Sua próxima grande
-              oportunidade está a um clique de distância.
+            No Vagogh, acreditamos que talento não tem fronteiras – por isso, ajudamos você a encontrar vagas remotas e híbridas que combinam com seu estilo de vida.
             </p>
+
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            Inspirados na genialidade e liberdade criativa de Van Gogh, queremos revolucionar a forma como as pessoas encontram trabalho. Nossa missão é conectar profissionais a empregos flexíveis, permitindo que você trabalhe de onde quiser – seja de casa, de um café ou viajando pelo mundo.
+            </p>
+
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            Embora algumas empresas estejam retornando ao modelo presencial, muitas ainda entendem que o que realmente importa não é de onde você trabalha, mas sim a qualidade do seu trabalho. No Vagogh, acreditamos que o talento não precisa de um escritório para brilhar – por isso, reunimos as melhores vagas remotas e híbridas em um só lugar, facilitando sua busca por oportunidades em empresas que valorizam entregas, talento e liberdade.
+            </p>
+
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            Embora algumas empresas estejam retornando ao modelo presencial, muitas ainda entendem que o que realmente importa não é de onde você trabalha, mas sim a qualidade do seu trabalho. No Vagogh, acreditamos que o talento não precisa de um escritório para brilhar – por isso, reunimos as melhores vagas remotas e híbridas em um só lugar, facilitando sua busca por oportunidades em empresas que valorizam entregas, talento e liberdade.
+            </p>
+
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          Nossos Valores <br />
+✅ Liberdade – Acreditamos que o trabalho deve se adaptar à vida das pessoas, não o contrário. Queremos que você tenha autonomia para escolher de onde e como trabalhar.
+<br />
+✅ Acessibilidade – Conectar talentos às melhores oportunidades de trabalho remoto e híbrido de forma simples, intuitiva e sem barreiras.
+<br />
+✅ Inovação – Estamos sempre atentos às mudanças do mercado para oferecer as vagas mais atualizadas e relevantes para você.
+<br />
+✅ Confiança – Trabalhamos para garantir que todas as oportunidades divulgadas sejam seguras, legítimas e alinhadas às expectativas dos candidatos.
+<br />
+✅ Crescimento – Mais do que encontrar um emprego, queremos ajudar você a construir uma carreira flexível e sustentável, sem limites geográficos.
+            </p>
+
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            
+            </p>
+
             <Link href="/signup">
               <Button size="lg" className="bg-[#7333DD] hover:bg-[#5d20c0] text-white text-lg">
                 Comece Sua Jornada <ArrowRight className="ml-2" />

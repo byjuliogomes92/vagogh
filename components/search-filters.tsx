@@ -57,17 +57,22 @@ type SearchFiltersProps = {
 }
 
 const jobTags = [
-  { name: "Designer", color: "pink-500 hover:bg-pink-600" },
-  { name: "Front-end", color: "blue-500 hover:bg-blue-600" },
-  { name: "Back-end", color: "green-500 hover:bg-green-600" },
-  { name: "Full-stack", color: "purple-500 hover:bg-purple-600" },
-  { name: "Cientista de Dados", color: "yellow-500 hover:bg-yellow-600" },
-  { name: "DevOps", color: "cyan-500 hover:bg-cyan-600" },
-  { name: "UX/UI", color: "red-500 hover:bg-red-600" },
-  { name: "Mobile", color: "lime-500 hover:bg-lime-600" },
-  { name: "Product Manager", color: "indigo-500 hover:bg-indigo-600" },
-  { name: "CRM", color: "orange-500 hover:bg-orange-600" }
-]
+  { name: "Designer", color: "pink-500 hover:bg-pink-600", emoji: "🎨" },
+  { name: "Front-end", color: "blue-500 hover:bg-blue-600", emoji: "💻" },
+  { name: "Back-end", color: "green-500 hover:bg-green-600", emoji: "🖥️" },
+  { name: "Full-stack", color: "purple-500 hover:bg-purple-600", emoji: "🚀" },
+  { name: "Cientista de Dados", color: "yellow-500 hover:bg-yellow-600", emoji: "📊" },
+  { name: "DevOps", color: "cyan-500 hover:bg-cyan-600", emoji: "🔧" },
+  { name: "UX/UI", color: "red-500 hover:bg-red-600", emoji: "🎯" },
+  { name: "Mobile", color: "lime-500 hover:bg-lime-600", emoji: "📱" },
+  { name: "Product Manager", color: "indigo-500 hover:bg-indigo-600", emoji: "📈" },
+  { name: "CRM", color: "orange-500 hover:bg-orange-600", emoji: "📞" }
+];
+
+const handleTagClick = (tagName: string) => {
+  // Lógica de busca usando o nome original da tag (sem emoji)
+  console.log("Tag selecionada:", tagName);
+};
 
 const jobTitles = [
   "Desenvolvedor Frontend",
@@ -80,6 +85,7 @@ const jobTitles = [
   "Especialista em SEO",
   "Desenvolvedor Mobile",
   "Arquiteto de Software",
+  "Analista de CRM"
 ]
 
 const countries = [
