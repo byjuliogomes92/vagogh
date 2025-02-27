@@ -16,6 +16,8 @@ type CompatibilityProps = {
   job: Job;
 };
 
+
+
 type Compatibility = {
   score: number;
   details: string;

@@ -27,7 +27,7 @@ const LoginPage: React.FC = () => {
     setError("")
 
     try {
-      await login(email, password, rememberMe)
+      await login(email, password) // Removido o terceiro argumento
       // O redirecionamento agora é tratado dentro da função de login
     } catch (err) {
       setError("Email ou senha inválidos")
@@ -89,7 +89,11 @@ const LoginPage: React.FC = () => {
                   </div>
                 </div>
                 <div className="flex items-center space-x-2 mb-4">
-                  <Checkbox id="rememberMe" checked={rememberMe} onCheckedChange={setRememberMe} />
+                  <Checkbox
+                    id="rememberMe"
+                    checked={rememberMe}
+                    onCheckedChange={(checked) => setRememberMe(checked === true)} // Corrigido o tipo
+                  />
                   <label
                     htmlFor="rememberMe"
                     className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-300"
@@ -122,4 +126,3 @@ const LoginPage: React.FC = () => {
 }
 
 export default LoginPage
-

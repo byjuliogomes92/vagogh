@@ -8,7 +8,7 @@ import { doc, setDoc, getDoc, updateDoc, serverTimestamp } from "firebase/firest
 import { auth, db } from "@/lib/firebase"
 import { FirebaseError } from "firebase/app"
 
-type User = {
+export type User = {
   id: string
   firstName: string
   lastName: string
