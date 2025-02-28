@@ -130,7 +130,7 @@ export default function SobreNos(): React.ReactNode {
     {
       question: "Como as empresas podem publicar vagas?",
       answer:
-        "As empresas podem se cadastrar na plataforma e publicar vagas através da nossa interface intuitiva. Oferecemos opções de publicação gratuita e patrocinada para maior visibilidade.",
+        "As empresas podem se cadastrar na plataforma e publicar vagas através de nossa interface intuitiva. Oferecemos opções de publicação gratuita e patrocinada para maior visibilidade.",
     },
   ]
 
