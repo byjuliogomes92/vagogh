@@ -484,7 +484,7 @@ const Home: React.FC = () => {
                       }}
                     >
                       <Image
-                        src="https://hebbkx1anhila5yf.public.blob.https://github.com/byjuliogomes92/vagogh/blob/main/public/vagogh-home.png?raw=true-storage.com/vagogh_img_02-cGkocOe3N4VO3qNMXRIJHeIBOoA1du.svg"
+                        src="https://raw.githubusercontent.com/byjuliogomes92/vagogh/refs/heads/main/public/vagogh-home.png"
                         alt="Modern Work Illustration"
                         width={600}
                         height={400}
