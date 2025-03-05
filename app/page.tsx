@@ -231,7 +231,7 @@ const Home: React.FC = () => {
   }, [])
 
   const handleSearch = () => {
-    if (!user && searchCount >= 15) {
+    if (!user && searchCount >= 20) {
       setIsLimitReachedModalOpen(true)
     } else {
       fetchJobs()
@@ -751,7 +751,7 @@ const Home: React.FC = () => {
           {!user && (
             <LimitReachedModal
               isOpen={isLimitReachedModalOpen}
-              onClose={() => setIsLimitReachedModalOpen(false)}
+              onClose={() => setIsLimitReachedModalOpen(true)}
               limitType="search"
             />
           )}
