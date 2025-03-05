@@ -177,9 +177,6 @@ export default function SobreNos(): React.ReactNode {
             Embora algumas empresas estejam retornando ao modelo presencial, muitas ainda entendem que o que realmente importa não é de onde você trabalha, mas sim a qualidade do seu trabalho. No Vagogh, acreditamos que o talento não precisa de um escritório para brilhar – por isso, reunimos as melhores vagas remotas e híbridas em um só lugar, facilitando sua busca por oportunidades em empresas que valorizam entregas, talento e liberdade.
             </p>
 
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Embora algumas empresas estejam retornando ao modelo presencial, muitas ainda entendem que o que realmente importa não é de onde você trabalha, mas sim a qualidade do seu trabalho. No Vagogh, acreditamos que o talento não precisa de um escritório para brilhar – por isso, reunimos as melhores vagas remotas e híbridas em um só lugar, facilitando sua busca por oportunidades em empresas que valorizam entregas, talento e liberdade.
-            </p>
 
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
           Nossos Valores <br />
