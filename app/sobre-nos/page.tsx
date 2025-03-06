@@ -151,55 +151,120 @@ export default function SobreNos(): React.ReactNode {
 
   return (
     <div className="min-h-screen bg-[#0F172A] relative">
-      <WorldMap />
       <div className="relative z-10">
         <NavBar />
         <main className="container mx-auto px-4 py-16 pt-24">
           {/* Hero Section */}
           <motion.section
-            className="text-center mb-24"
+            className="text-center mb-24 px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
+            {/* Título Principal */}
             <h1 className="text-5xl md:text-6xl font-bold mb-6 font-playfair italic text-[#F7D047]">
-            Seu talento, sem fronteiras.
+              Seu talento, sem fronteiras.
             </h1>
+
+            {/* Descrição Breve */}
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            No Vagogh, acreditamos que talento não tem fronteiras – por isso, ajudamos você a encontrar vagas remotas e híbridas que combinam com seu estilo de vida.
+              No Vagogh, acreditamos que talento não tem fronteiras. Conectamos você às melhores vagas remotas e híbridas, adaptadas ao seu estilo de vida.
             </p>
 
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Inspirados na genialidade e liberdade criativa de Van Gogh, queremos revolucionar a forma como as pessoas encontram trabalho. Nossa missão é conectar profissionais a empregos flexíveis, permitindo que você trabalhe de onde quiser – seja de casa, de um café ou viajando pelo mundo.
-            </p>
+            {/* Botão de CTA */}
+            <div className="mb-12">
+              <Link href="/signup">
+                <Button size="lg" className="bg-[#7333DD] hover:bg-[#5d20c0] text-white text-lg">
+                  Comece Sua Jornada <ArrowRight className="ml-2" />
+                </Button>
+              </Link>
+            </div>
 
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Embora algumas empresas estejam retornando ao modelo presencial, muitas ainda entendem que o que realmente importa não é de onde você trabalha, mas sim a qualidade do seu trabalho. No Vagogh, acreditamos que o talento não precisa de um escritório para brilhar – por isso, reunimos as melhores vagas remotas e híbridas em um só lugar, facilitando sua busca por oportunidades em empresas que valorizam entregas, talento e liberdade.
-            </p>
+            {/* Missão e Valores Section */}
+            <motion.section
+              className="container mx-auto px-4 py-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              {/* Missão com Fundo Transparente */}
+              <motion.div
+                className="p-8 rounded-lg mb-12 text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <h3 className="text-2xl font-semibold text-[#F7D047] mb-4">Nossa Missão</h3>
+                <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+                  Inspirados na genialidade e liberdade criativa de Van Gogh, queremos revolucionar a forma como as pessoas encontram trabalho. Nossa missão é conectar profissionais a empregos flexíveis, permitindo que você trabalhe de onde quiser – seja de casa, de um café ou viajando pelo mundo.
+                </p>
+              </motion.div>
 
+              {/* Valores */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[
+                  {
+                    icon: "/earth-globe.png", // Caminho correto para a imagem de liberdade
+                    title: "Liberdade",
+                    description: "Acreditamos que o trabalho deve se adaptar à vida das pessoas, não o contrário.",
+                  },
+                  {
+                    icon: "/rocket.png", // Caminho correto para a imagem de acessibilidade
+                    title: "Acessibilidade",
+                    description: "Conectamos talentos às melhores oportunidades de forma simples e sem barreiras.",
+                  },
+                  {
+                    icon: "/electric-light-bulb.png", // Caminho correto para a imagem de inovação
+                    title: "Inovação",
+                    description: "Oferecemos as vagas mais atualizadas e relevantes para você.",
+                  },
+                  {
+                    icon: "/lock.png", // Caminho correto para a imagem de confiança
+                    title: "Confiança",
+                    description: "Garantimos que todas as oportunidades sejam seguras e alinhadas às suas expectativas.",
+                  },
+                  {
+                    icon: "/chart.png", // Caminho correto para a imagem de crescimento
+                    title: "Crescimento",
+                    description: "Ajudamos você a construir uma carreira flexível e sustentável, sem limites geográficos.",
+                  },
+                  {
+                    icon: "/handshake.png", // Caminho correto para a imagem de colaboração
+                    title: "Colaboração",
+                    description: "Promovemos um ambiente de trabalho colaborativo, onde todos podem contribuir e crescer juntos.",
+                  },
+                ].map((value, index) => (
+                  <motion.div
+                    key={index}
+                    className="bg-[#1E293B] p-6 rounded-lg shadow-lg flex flex-col items-center text-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <div className="w-24 h-24 mb-4 relative">
+                      <Image
+                        src={value.icon} // Caminho da imagem
+                        alt={value.title} // Texto alternativo para acessibilidade
+                        fill // Preenche o container (width e height são definidos pelo container)
+                        className="object-contain" // Mantém a proporção da imagem
+                      />
+                    </div>
+                    <h4 className="text-xl font-semibold text-[#F7D047] mb-2">{value.title}</h4>
+                    <p className="text-gray-300">{value.description}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.section>
 
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-          Nossos Valores <br />
-✅ Liberdade – Acreditamos que o trabalho deve se adaptar à vida das pessoas, não o contrário. Queremos que você tenha autonomia para escolher de onde e como trabalhar.
-<br />
-✅ Acessibilidade – Conectar talentos às melhores oportunidades de trabalho remoto e híbrido de forma simples, intuitiva e sem barreiras.
-<br />
-✅ Inovação – Estamos sempre atentos às mudanças do mercado para oferecer as vagas mais atualizadas e relevantes para você.
-<br />
-✅ Confiança – Trabalhamos para garantir que todas as oportunidades divulgadas sejam seguras, legítimas e alinhadas às expectativas dos candidatos.
-<br />
-✅ Crescimento – Mais do que encontrar um emprego, queremos ajudar você a construir uma carreira flexível e sustentável, sem limites geográficos.
-            </p>
-
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            
-            </p>
-
-            <Link href="/signup">
-              <Button size="lg" className="bg-[#7333DD] hover:bg-[#5d20c0] text-white text-lg">
-                Comece Sua Jornada <ArrowRight className="ml-2" />
-              </Button>
-            </Link>
+            {/* CTA Final */}
+            <div className="mt-8">
+              <Link href="/signup">
+                <Button size="lg" className="bg-[#7333DD] hover:bg-[#5d20c0] text-white text-lg">
+                  Comece Sua Jornada <ArrowRight className="ml-2" />
+                </Button>
+              </Link>
+            </div>
           </motion.section>
 
           {/* Statistics Section */}

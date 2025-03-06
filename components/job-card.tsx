@@ -410,7 +410,7 @@ export function JobCard({
             href={`/jobs/${id}`}
             className="w-full"
             onClick={(e) => {
-              if (!user && globalViewCount >= 5) {
+              if (!user && globalViewCount >= 20) {
                 e.preventDefault()
                 setIsLimitReachedModalOpen(true)
               } else if (!user) {

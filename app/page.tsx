@@ -8,7 +8,7 @@ import { DonationBanner } from "@/components/donation-banner"
 import { SavedFilters } from "@/components/saved-filters"
 import { useAuth } from "@/contexts/auth-context"
 import { db } from "@/lib/firebase"
-import { query, collection, getDocs } from "firebase/firestore"
+import { query, collection, getDoc, getDocs } from "firebase/firestore"
 import { toast } from "@/components/ui/use-toast"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
@@ -48,7 +48,6 @@ type Job = {
 
 const initialFilters: FilterCriteria = {
   search: "",
-  location: "all",
   experience: "all",
   contractType: "all",
   salaryRange: [1000, 30000],
@@ -87,6 +86,16 @@ const Home: React.FC = () => {
 
   const jobsPerPage = 6
 
+  useEffect(() => {
+    const today = new Date().toDateString();
+    const lastViewDate = sessionStorage.getItem('lastViewDate');
+  
+    if (lastViewDate !== today) {
+      sessionStorage.setItem('viewCount', '0');
+      sessionStorage.setItem('lastViewDate', today);
+    }
+  }, []);
+
   const fetchJobs = async () => {
     console.log("Iniciando fetchJobs...");
     setIsLoading(true);
@@ -105,8 +114,16 @@ const Home: React.FC = () => {
       }
       console.log("Vagas recebidas:", data.jobs);
       setJobs(data.jobs);
-      if (!user && searchCount < 5) {
-        incrementSearchCount();
+      // Verificar e incrementar o contador de visualizações
+      if (!user) {
+        const storedViewCount = sessionStorage.getItem('viewCount');
+        const initialViewCount = storedViewCount ? parseInt(storedViewCount, 10) : 0;
+
+        if (initialViewCount >= 20) {
+          setIsLimitReachedModalOpen(true);
+        } else {
+          sessionStorage.setItem('viewCount', (initialViewCount + 1).toString());
+        }
       }
     } catch (err) {
       console.error("Erro ao buscar vagas:", err);
@@ -139,7 +156,7 @@ const Home: React.FC = () => {
           const q = query(collection(db, `users/${user.id}/savedFilters`))
           const querySnapshot = await getDocs(q)
           const loadedFilters: SavedFilter[] = []
-          querySnapshot.forEach((doc) => {
+          querySnapshot.forEach((doc: { id: any; data: () => SavedFilter }) => {
             loadedFilters.push({ id: doc.id, ...doc.data() } as SavedFilter)
           })
           setSavedFilters(loadedFilters)
@@ -364,19 +381,40 @@ const Home: React.FC = () => {
     window.scrollTo(0, 0)
   }, [])
 
-  const FeatureCard = ({ icon: Icon, title, description }: { icon: any; title: string; description: string }) => (
+  const FeatureCard = ({
+    icon: Icon,
+    image,
+    title,
+    description,
+  }: {
+    icon?: any; // Ícone (opcional)
+    image?: string; // Caminho da imagem (opcional)
+    title: string;
+    description: string;
+  }) => (
     <motion.div
       className="bg-gradient-to-br from-[#1E293B] to-[#0F172A] p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
       <div className="bg-gradient-to-r from-[#7333DD] to-[#5d20c0] rounded-full p-3 inline-block mb-4">
-        <Icon className="w-8 h-8 text-white" />
+        {image ? (
+          <div className="w-8 h-8 relative">
+            <Image
+              src={image}
+              alt={title}
+              fill
+              className="object-contain"
+            />
+          </div>
+        ) : (
+          <Icon className="w-8 h-8 text-white" />
+        )}
       </div>
       <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
       <p className="text-gray-300">{description}</p>
     </motion.div>
-  )
+  );
 
   const testimonials = [
     {
@@ -412,6 +450,7 @@ const Home: React.FC = () => {
         <NavBar />
         <main className="container mx-auto px-4 py-8 pt-24 pb-24 md:pb-8 flex-grow">
           {user && (
+            
             <div
               className="absolute top-0 left-0 right-0 z-[-1]"
               style={{
@@ -555,7 +594,7 @@ const Home: React.FC = () => {
                   >
                     <motion.div initial={{ y: -20 }} animate={{ y: 0 }} transition={{ duration: 0.3, delay: 0.1 }}>
                       <SavedFilters
-                        filters={savedFilters}
+                        savedFilters={savedFilters}
                         onDelete={handleDeleteSavedFilter}
                         onApply={handleApplySavedFilter}
                       />
@@ -599,7 +638,7 @@ const Home: React.FC = () => {
                       </div>
                     ) : (
                       <div className="text-center mt-8 space-y-4">
-                        
+
                       </div>
                     )}
                     {paginatedJobs.length > 0 && (
@@ -646,22 +685,22 @@ const Home: React.FC = () => {
                 </motion.h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                   <FeatureCard
-                    icon={Search}
+                    image="/glass.png" // Caminho da imagem
                     title="Busca Inteligente"
                     description="Encontre as melhores vagas com nossa tecnologia de busca avançada."
                   />
                   <FeatureCard
-                    icon={Briefcase}
+                    image="/briefcase.png" // Caminho da imagem
                     title="Vagas Exclusivas"
                     description="Acesse oportunidades de trabalho remoto em empresas de todo o mundo."
                   />
                   <FeatureCard
-                    icon={Users}
+                    image="/globe-with-meridians.png" // Caminho da imagem
                     title="Networking Global"
                     description="Conecte-se com profissionais e empresas de diversos países."
                   />
                   <FeatureCard
-                    icon={Zap}
+                    image="/woman-technologist.png" // Caminho da imagem
                     title="Perfil Otimizado"
                     description="Destaque suas habilidades e aumente suas chances de contratação."
                   />
@@ -751,7 +790,7 @@ const Home: React.FC = () => {
           {!user && (
             <LimitReachedModal
               isOpen={isLimitReachedModalOpen}
-              onClose={() => setIsLimitReachedModalOpen(true)}
+              onClose={() => setIsLimitReachedModalOpen(false)}
               limitType="search"
             />
           )}

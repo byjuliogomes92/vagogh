@@ -1,15 +1,17 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
-import { CheckCircle, AlertTriangle } from "lucide-react"
+import { CheckCircle, AlertTriangle, X } from "lucide-react"
 import { useRouter } from "next/navigation"
+
 
 interface LimitReachedModalProps {
   isOpen: boolean
   limitType: "search" | "view"
+  onClose: () => void // Adicionando a prop onClose para fechar o modal
 }
 
-export function LimitReachedModal({ isOpen, limitType }: LimitReachedModalProps) {
+export function LimitReachedModal({ isOpen, limitType, onClose }: LimitReachedModalProps) {
   const router = useRouter()
 
   const handleLogin = () => {
@@ -37,7 +39,7 @@ export function LimitReachedModal({ isOpen, limitType }: LimitReachedModalProps)
           </DialogTitle>
         </DialogHeader>
         <DialogDescription className="text-center text-gray-300 mt-2">
-          Você atingiu o limite diário de {limitType === "search" ? "3 buscas" : "3 visualizações"} de vagas. Para
+          Você atingiu o limite diário de {limitType === "search" ? "20 buscas" : "20 visualizações"} de vagas. Para
           continuar, faça login ou crie uma conta gratuita.
           <br />
           Este limite será reiniciado amanhã.
@@ -78,8 +80,14 @@ export function LimitReachedModal({ isOpen, limitType }: LimitReachedModalProps)
             Criar Conta Grátis
           </Button>
         </div>
+        {/* Botão de fechar */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-700 transition-colors duration-200"
+        >
+          <X className="w-6 h-6 text-gray-300" />
+        </button>
       </DialogContent>
     </Dialog>
   )
 }
-

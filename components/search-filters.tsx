@@ -57,17 +57,70 @@ type SearchFiltersProps = {
 }
 
 const jobTags = [
-  { name: "Designer", color: "pink-500 hover:bg-pink-600", emoji: "🎨" },
-  { name: "Front-end", color: "blue-500 hover:bg-blue-600", emoji: "💻" },
-  { name: "Back-end", color: "green-500 hover:bg-green-600", emoji: "🖥️" },
-  { name: "Full-stack", color: "purple-500 hover:bg-purple-600", emoji: "🚀" },
-  { name: "Cientista de Dados", color: "yellow-500 hover:bg-yellow-600", emoji: "📊" },
-  { name: "DevOps", color: "cyan-500 hover:bg-cyan-600", emoji: "🔧" },
-  { name: "UX/UI", color: "red-500 hover:bg-red-600", emoji: "🎯" },
-  { name: "Mobile", color: "lime-500 hover:bg-lime-600", emoji: "📱" },
-  { name: "Product Manager", color: "indigo-500 hover:bg-indigo-600", emoji: "📈" },
-  { name: "CRM", color: "orange-500 hover:bg-orange-600", emoji: "📞" }
+  { name: "Designer", color: "pink-500 hover:bg-pink-600", image: "/designer.png" },
+  { name: "Front-end", color: "blue-500 hover:bg-blue-600", image: "/frontend.png" },
+  { name: "Back-end", color: "green-500 hover:bg-green-600", image: "/backend.png" },
+  { name: "Full-stack", color: "purple-500 hover:bg-purple-600", image: "/fullstack.png" },
+  { name: "Cientista de Dados", color: "yellow-500 hover:bg-yellow-600", image: "/datascience.png" },
+  { name: "DevOps", color: "cyan-500 hover:bg-cyan-600", image: "/devops.png" },
+  { name: "UX/UI", color: "red-500 hover:bg-red-600", image: "/uiux.png" },
+  { name: "Mobile", color: "lime-500 hover:bg-lime-600", image: "/mobile.png" },
+  { name: "Product Manager", color: "indigo-500 hover:bg-indigo-600", image: "/productmanager.png" },
+  { name: "CRM", color: "orange-500 hover:bg-orange-600", image: "/crm.png" }
 ];
+
+const tagColors = {
+  "Designer": {
+    border: "border-pink-500",
+    bg: "bg-pink-500",
+    hover: "hover:bg-pink-600",
+  },
+  "Front-end": {
+    border: "border-blue-500",
+    bg: "bg-blue-500",
+    hover: "hover:bg-blue-600",
+  },
+  "Back-end": {
+    border: "border-green-500",
+    bg: "bg-green-500",
+    hover: "hover:bg-green-600",
+  },
+  "Full-stack": {
+    border: "border-purple-500",
+    bg: "bg-purple-500",
+    hover: "hover:bg-purple-600",
+  },
+  "Cientista de Dados": {
+    border: "border-yellow-500",
+    bg: "bg-yellow-500",
+    hover: "hover:bg-yellow-600",
+  },
+  "DevOps": {
+    border: "border-cyan-500",
+    bg: "bg-cyan-500",
+    hover: "hover:bg-cyan-600",
+  },
+  "UX/UI": {
+    border: "border-red-500",
+    bg: "bg-red-500",
+    hover: "hover:bg-red-600",
+  },
+  "Mobile": {
+    border: "border-lime-500",
+    bg: "bg-lime-500",
+    hover: "hover:bg-lime-600",
+  },
+  "Product Manager": {
+    border: "border-indigo-500",
+    bg: "bg-indigo-500",
+    hover: "hover:bg-indigo-600",
+  },
+  "CRM": {
+    border: "border-orange-500",
+    bg: "bg-orange-500",
+    hover: "hover:bg-orange-600",
+  },
+};
 
 const handleTagClick = (tagName: string) => {
   // Lógica de busca usando o nome original da tag (sem emoji)
@@ -390,23 +443,42 @@ export function SearchFilters({ filters, onFilterChange, onSaveFilter }: SearchF
               <QuestionMarkTooltip content="Selecione tags relevantes para refinar sua busca por vagas específicas." />
             </Label>
             <div className="flex flex-wrap gap-2">
-              {jobTags.map((tag) => (
-                <Button
-                  key={tag.name}
-                  variant="outline"
-                  size="sm"
-                  className={`text-white transition-all duration-200 ease-in-out transform hover:-translate-y-1 ${
-                    filters.selectedTags.includes(tag.name)
-                      ? `border-2 border-${tag.color.replace("bg-", "")} font-semibold scale-105`
-                      : "border border-white/30 bg-[#1E2D44]"
-                  } hover:${tag.color} hover:text-white`}
-                  onClick={() => handleTagClick(tag.name)}
-                >
-                  {tag.name}
-                  {filters.selectedTags.includes(tag.name) && <span className="ml-1 text-xs">✓</span>}
-                </Button>
-              ))}
+  {jobTags.map((tag) => {
+    const isSelected = filters.selectedTags.includes(tag.name);
+    const colors = tagColors[tag.name];
+
+    return (
+      <Button
+        key={tag.name}
+        variant="outline"
+        size="sm"
+        className={cn(
+          "text-white transition-all duration-200 ease-in-out transform hover:-translate-y-1",
+          isSelected
+            ? `${colors.border} ${colors.bg} font-semibold scale-105`
+            : "border border-white/30 bg-[#1E2D44]",
+          colors.hover
+        )}
+        onClick={() => handleTagClick(tag.name)}
+      >
+        <div className="flex items-center space-x-2">
+          {tag.image && (
+            <div className="w-4 h-4 relative">
+              <Image
+                src={tag.image}
+                alt={tag.name}
+                fill
+                className="object-contain"
+              />
             </div>
+          )}
+          <span>{tag.name}</span>
+        </div>
+        {isSelected && <span className="ml-1 text-xs">✓</span>}
+      </Button>
+    );
+  })}
+</div>
           </div>
         </div>
 
