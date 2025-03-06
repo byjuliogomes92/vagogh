@@ -47,7 +47,7 @@ export default function JobPage() {
       setIsLoading(true)
       setError(null)
       try {
-        if (!user && viewCount >= 3) {
+        if (!user && viewCount >= 20) {
           setIsLimitReachedModalOpen(true)
           setIsLoading(false)
           return
